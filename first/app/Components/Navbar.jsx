@@ -2,9 +2,11 @@
 
 import Link from "next/link"
 import { useState } from "react"
+import { usePathname } from "next/navigation"
 
 export default function Navbar() {
   const [open, setOpen] = useState(false)
+  const pathname = usePathname()
 
   return (
     <nav className="sticky top-4 z-50 px-4">
@@ -16,16 +18,16 @@ export default function Navbar() {
             {/* Logo */}
             <Link
               href="/"
-              className="text-lg font-semibold tracking-tight text-white hover:opacity-80 transition"
+              className="text-lg font-semibold tracking-tight text-white"
             >
               MyApp
             </Link>
 
             {/* Desktop Links */}
             <div className="hidden md:flex items-center gap-2">
-              <NavLink href="/">Home</NavLink>
-              <NavLink href="/about">About</NavLink>
-              <NavLink href="/contact">Contact</NavLink>
+              <NavLink href="/" active={pathname === "/"}>Home</NavLink>
+              <NavLink href="/about" active={pathname === "/about"}>About</NavLink>
+              <NavLink href="/contact" active={pathname === "/contact"}>Contact</NavLink>
 
               <Link
                 href="/signup"
@@ -35,10 +37,10 @@ export default function Navbar() {
               </Link>
             </div>
 
-            {/* Mobile Menu Button */}
+            {/* Mobile Button */}
             <button
               onClick={() => setOpen(!open)}
-              className="md:hidden rounded-full bg-white/10 px-4 py-2 text-white backdrop-blur hover:bg-white/20 transition"
+              className="md:hidden rounded-full bg-white/10 px-4 py-2 text-white hover:bg-white/20 transition"
             >
               ☰
             </button>
@@ -47,15 +49,15 @@ export default function Navbar() {
           {/* Mobile Menu */}
           {open && (
             <div className="md:hidden border-t border-white/10 px-6 py-6">
-              <div className="flex flex-col gap-4">
-                <MobileLink href="/" setOpen={setOpen}>Home</MobileLink>
-                <MobileLink href="/about" setOpen={setOpen}>About</MobileLink>
-                <MobileLink href="/contact" setOpen={setOpen}>Contact</MobileLink>
+              <div className="flex flex-col gap-3">
+                <MobileLink href="/" active={pathname === "/"} setOpen={setOpen}>Home</MobileLink>
+                <MobileLink href="/about" active={pathname === "/about"} setOpen={setOpen}>About</MobileLink>
+                <MobileLink href="/contact" active={pathname === "/contact"} setOpen={setOpen}>Contact</MobileLink>
 
                 <Link
                   href="/signup"
                   onClick={() => setOpen(false)}
-                  className="mt-2 rounded-xl bg-white py-3 text-center text-sm font-medium text-black shadow-lg"
+                  className="mt-3 rounded-xl bg-white py-3 text-center text-sm font-medium text-black shadow-lg"
                 >
                   Get Started
                 </Link>
@@ -68,25 +70,33 @@ export default function Navbar() {
   )
 }
 
-/* Reusable desktop link */
-function NavLink({ href, children }) {
+/* Desktop Nav Link */
+function NavLink({ href, children, active }) {
   return (
     <Link
       href={href}
-      className="rounded-full px-4 py-2 text-sm text-white/80 hover:text-white hover:bg-white/10 transition"
+      className={`relative rounded-full px-4 py-2 text-sm transition
+        ${active
+          ? "text-white bg-white/20 shadow-inner"
+          : "text-white/70 hover:text-white hover:bg-white/10"
+        }`}
     >
       {children}
     </Link>
   )
 }
 
-/* Reusable mobile link */
-function MobileLink({ href, children, setOpen }) {
+/* Mobile Nav Link */
+function MobileLink({ href, children, active, setOpen }) {
   return (
     <Link
       href={href}
       onClick={() => setOpen(false)}
-      className="rounded-lg px-3 py-2 text-sm text-white/80 hover:text-white hover:bg-white/10 transition"
+      className={`rounded-lg px-3 py-2 text-sm transition
+        ${active
+          ? "bg-white/20 text-white"
+          : "text-white/70 hover:bg-white/10 hover:text-white"
+        }`}
     >
       {children}
     </Link>
