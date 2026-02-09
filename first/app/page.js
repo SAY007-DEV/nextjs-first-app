@@ -5,11 +5,10 @@ import Spline from '@splinetool/react-spline';
 export default function HomePage() {
   return (
     <div className="min-h-screen bg-neutral-950 text-neutral-100">
-      <div className="mx-auto max-w-7xl px-6">
 
         {/* Hero Section */}
 
-<section className="relative py-32 overflow-hidden">
+<section className="relative h-screen w-full overflow-hidden isolate flex items-center justify-center">
 
   {/* Spline Background */}
   <div className="absolute inset-0 -z-10">
@@ -49,6 +48,7 @@ export default function HomePage() {
   </div>
 </section>
 
+      <div className="mx-auto max-w-7xl px-6">
 
 {/* testing */}
 
