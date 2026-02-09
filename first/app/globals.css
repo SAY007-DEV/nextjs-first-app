@@ -31,3 +31,7 @@ body {
 .nav-link {
   @apply text-sm font-medium text-gray-600 hover:text-black transition;
 }
+
+.social-btn {
+  @apply rounded-full border border-neutral-700 px-4 py-2 text-xs text-neutral-300 hover:bg-white hover:text-black transition;
+}
