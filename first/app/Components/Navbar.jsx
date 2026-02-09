@@ -22,9 +22,9 @@ export default function Navbar() {
             <Link href="/about" className="nav-link">About</Link>
             <Link href="/contact" className="nav-link">Contact</Link>
 
-            <button className="rounded-full bg-black px-4 py-2 text-sm text-white hover:bg-black/80 transition">
+            <Link href="/signup" className="rounded-full bg-black px-4 py-2 text-sm text-white hover:bg-black/80 transition">
               Get Started
-            </button>
+            </Link>
           </div>
 
           {/* Mobile Menu Button */}
