@@ -35,3 +35,14 @@ body {
 .social-btn {
   @apply rounded-full border border-neutral-700 px-4 py-2 text-xs text-neutral-300 hover:bg-white hover:text-black transition;
 }
+
+.feature-card {
+  @apply rounded-2xl border border-neutral-800 bg-neutral-900 p-6;
+}
+body {
+  background: radial-gradient(
+    circle at top,
+    #111827,
+    #020617
+  );
+}
