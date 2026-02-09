@@ -1,36 +1,77 @@
+import Spline from '@splinetool/react-spline';
+
+
+
 export default function HomePage() {
   return (
     <div className="min-h-screen bg-neutral-950 text-neutral-100">
       <div className="mx-auto max-w-7xl px-6">
 
         {/* Hero Section */}
-        <section className="py-32 text-center">
-          <h1 className="text-4xl md:text-6xl font-bold tracking-tight">
-            Build Modern Apps <br className="hidden md:block" />
-            With Confidence
-          </h1>
 
-          <p className="mt-6 max-w-2xl mx-auto text-neutral-400">
-            A modern Next.js application built for performance, scalability,
-            and great user experience.
-          </p>
+<section className="relative py-32 overflow-hidden">
 
-          <div className="mt-10 flex justify-center gap-4">
-            <a
-              href="/contact"
-              className="rounded-full bg-white px-6 py-3 text-sm font-medium text-black hover:bg-neutral-200 transition"
-            >
-              Get Started
-            </a>
+  {/* Spline Background */}
+  <div className="absolute inset-0 -z-10">
+    <Spline scene="https://prod.spline.design/5hxRFILpgii8YAMq/scene.splinecode" />
+  </div>
 
-            <a
-              href="/about"
-              className="rounded-full border border-neutral-700 px-6 py-3 text-sm font-medium text-neutral-200 hover:bg-neutral-900 transition"
-            >
-              Learn More
-            </a>
-          </div>
-        </section>
+  {/* Overlay for contrast */}
+  <div className="absolute inset-0 bg-neutral-950/70 -z-10" />
+
+  {/* Content */}
+  <div className="relative text-center">
+    <h1 className="text-4xl md:text-6xl font-bold tracking-tight">
+      Build Modern Apps <br className="hidden md:block" />
+      With Confidence
+    </h1>
+
+    <p className="mt-6 max-w-2xl mx-auto text-neutral-400">
+      A modern Next.js application built for performance, scalability,
+      and great user experience.
+    </p>
+
+    <div className="mt-10 flex justify-center gap-4">
+      <a
+        href="/contact"
+        className="rounded-full bg-white px-6 py-3 text-sm font-medium text-black hover:bg-neutral-200 transition"
+      >
+        Get Started
+      </a>
+
+      <a
+        href="/about"
+        className="rounded-full border border-neutral-700 px-6 py-3 text-sm font-medium text-neutral-200 hover:bg-neutral-900 transition"
+      >
+        Learn More
+      </a>
+    </div>
+  </div>
+</section>
+
+
+{/* testing */}
+
+{/* <section className="py-32 grid md:grid-cols-2 gap-12 items-center">
+
+  <div>
+    <h1 className="text-4xl md:text-6xl font-bold tracking-tight">
+      Build Modern Apps <br className="hidden md:block" />
+      With Confidence
+    </h1>
+
+    <p className="mt-6 max-w-xl text-neutral-400">
+      A modern Next.js application built for performance, scalability,
+      and great user experience.
+    </p>
+  </div>
+
+  <div className="h-[400px] md:h-[500px]">
+    <Spline scene="https://prod.spline.design/5hxRFILpgii8YAMq/scene.splinecode" />
+  </div>
+
+</section> */}
+
 
         {/* Features */}
         <section className="py-24">
