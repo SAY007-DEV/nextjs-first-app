@@ -1,4 +1,5 @@
 import Spline from '@splinetool/react-spline';
+import Footer from './Components/Footer';
 
 
 
@@ -146,6 +147,7 @@ export default function HomePage() {
         </section>
 
       </div>
+      <Footer/>
     </div>
   )
 }

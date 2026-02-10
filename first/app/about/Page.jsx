@@ -1,3 +1,5 @@
+import Footer from "../Components/Footer";
+
 export default function AboutPage() {
   return (
     <div className="min-h-screen bg-neutral-950 text-neutral-100">
@@ -100,10 +102,8 @@ export default function AboutPage() {
         </div>
 
         {/* Footer */}
-        <p className="mt-20 text-center text-sm text-neutral-500">
-          © {new Date().getFullYear()} MyApp. All rights reserved.
-        </p>
       </div>
+       <Footer/>
     </div>
   )
 }

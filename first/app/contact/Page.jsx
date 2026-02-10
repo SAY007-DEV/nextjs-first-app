@@ -1,5 +1,7 @@
 "use client"
 
+import Footer from "../Components/Footer"
+
 export default function ContactPage() {
   return (
     <div className="min-h-screen bg-neutral-950 text-neutral-100">
@@ -103,10 +105,8 @@ export default function ContactPage() {
         </div>
 
         {/* Footer Note */}
-        <p className="mt-16 text-center text-sm text-neutral-500">
-          © {new Date().getFullYear()} MyApp. All rights reserved.
-        </p>
       </div>
+       <Footer/>
     </div>
   )
 }
